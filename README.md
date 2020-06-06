@@ -26,6 +26,11 @@ const Body = (props) => {
 // ... wrap a component with AsModal HOC 
 const BodyAsModal = AsModal(Body)
 
+//with options 
+const BodyAsModal = AsModal(Body, {
+  gesturesEnabled: true
+})
+
 export default function App() {
   const [modalVisible, setModalVisible] = React.useState(false);
   return (
