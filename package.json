@@ -1,6 +1,6 @@
 {
   "name": "react-native-as-modal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "HOC to convert a component into modal",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
