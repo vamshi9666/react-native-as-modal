@@ -7,8 +7,6 @@ HOC to convert a component into modal
 ```sh
 npm install react-native-rn-as-modal
 
-yarn add react-native-rn-as-modal
-
 ```
 
 ## Usage
