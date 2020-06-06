@@ -1,20 +1,36 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import RnAsModal from 'react-native-rn-as-modal';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    RnAsModal.multiply(3, 7).then(setResult);
-  }, []);
-
+  const [modalVisible, setModalVisible] = React.useState<boolean>(false);
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <>
+      <BodyAsModal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+      />
+      <View style={styles.container}>
+        <Button
+          title={'open modal'}
+          onPress={() => setModalVisible(!modalVisible)}
+        />
+      </View>
+    </>
   );
 }
+
+const Body = ({ onClose }: { onClose: any }) => {
+  return (
+    <View style={{ backgroundColor: 'white', padding: 24 }}>
+      <Text>this s modal body</Text>
+      <Button title={'close'} onPress={onClose} />
+    </View>
+  );
+};
+const BodyAsModal = RnAsModal(Body, {
+  gesturesEnabled: true,
+});
 
 const styles = StyleSheet.create({
   container: {

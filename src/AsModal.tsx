@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, ComponentType } from 'react';
 import { Dimensions, StyleSheet } from 'react-native';
-import Interactable from './../Interactable';
+import Interactable from '../Interactable/Interactable';
 import A from 'react-native-reanimated';
 const TENSION = 800;
 const DAMP = 1 / 2;
@@ -10,13 +10,25 @@ const snapPoints = [
   { y: 0, tension: TENSION, damping: DAMP },
 ];
 
-const asModal = (InnerComponent: ComponentType) => {
-  return (props: any) => {
+interface IProps {
+  onClose: () => void;
+  visible: Boolean;
+}
+interface ConfigType {
+  gesturesEnabled?: Boolean;
+}
+const asModal = (
+  InnerComponent: ComponentType<{ onClose: () => void }>,
+  config: ConfigType
+) => {
+  const gesturesEnabled = (config && config.gesturesEnabled) || false;
+  return (props: IProps) => {
     const delta = useRef(new A.Value(0)).current;
     const { visible, onClose } = props;
     const ref = useRef(null);
     useEffect(() => {
       if (ref.current) {
+        //@ts-ignore
         ref.current.snapTo({ index: visible ? 1 : 0 });
       }
     }, [visible]);
@@ -25,22 +37,28 @@ const asModal = (InnerComponent: ComponentType) => {
       <>
         <Interactable.View
           ref={ref}
-          dragEnabled={true}
+          dragEnabled={gesturesEnabled}
           verticalOnly={true}
           onSnap={(event: any) => {
             if (event.nativeEvent.index === 0) {
               onClose();
             }
           }}
+          style={{
+            ...StyleSheet.absoluteFillObject,
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 3,
+          }}
           animatedValueY={delta}
           snapPoints={snapPoints}
         >
-          <InnerComponent {...props} />
+          <InnerComponent {...props} onClose={onClose} />
         </Interactable.View>
         <A.View
           pointerEvents={'none'}
           style={{
-            zIndex: -1,
+            zIndex: 2,
             ...StyleSheet.absoluteFillObject,
             backgroundColor: '#000',
             opacity: delta.interpolate({

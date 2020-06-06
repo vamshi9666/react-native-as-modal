@@ -1,1 +1,3 @@
-export { default as asModal } from './AsModal';
+import asModal from './AsModal';
+
+export default asModal;

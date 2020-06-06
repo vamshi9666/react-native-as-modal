@@ -1,7 +1,7 @@
+//@ts-nocheck
 import React, { Component } from 'react';
 import Animated from 'react-native-reanimated';
 import { PanGestureHandler, State } from 'react-native-gesture-handler';
-//@ts-ignore
 const {
   add,
   cond,
