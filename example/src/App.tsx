@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import RnAsModal from 'react-native-rn-as-modal';
+import AsModal from 'react-native-as-modal';
 
 export default function App() {
   const [modalVisible, setModalVisible] = React.useState<boolean>(false);
@@ -28,7 +28,7 @@ const Body = ({ onClose }: { onClose: any }) => {
     </View>
   );
 };
-const BodyAsModal = RnAsModal(Body, {
+const BodyAsModal = AsModal(Body, {
   gesturesEnabled: true,
 });
 

@@ -1,18 +1,20 @@
-# react-native-rn-as-modal
+# react-native-as-modal
 
-HOC to convert a component into modal
+HOC to convert a react native component into modal
 
 ## Installation
 
 ```sh
-npm install react-native-rn-as-modal
+npm install react-native-as-modal
 
 ```
 
 ## Usage
 
 ```js
-import AsModal from "react-native-rn-as-modal";
+import AsModal from "react-native-as-modal";
+
+
 const Body = (props) => {
   const { onClose } = props
   return (
@@ -23,10 +25,10 @@ const Body = (props) => {
   );
 };
 
-// ... wrap a component with AsModal HOC 
+// wrap a component with AsModal HOC 
 const BodyAsModal = AsModal(Body)
 
-//with options 
+// with options 
 const BodyAsModal = AsModal(Body, {
   gesturesEnabled: true
 })

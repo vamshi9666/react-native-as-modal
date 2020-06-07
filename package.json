@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-rn-as-modal.podspec",
+    "react-native-as-modal.podspec",
     "!lib/typescript/example",
     "!**/__tests__"
   ],
@@ -31,13 +31,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/vamshi9666/react-native-rn-as-modal",
+  "repository": "https://github.com/vamshi9666/react-native-as-modal",
   "author": "Vamshi krishna <vamshi9666@riseup.net> (https://github.com/vamshi9666)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vamshi9666/react-native-rn-as-modal/issues"
+    "url": "https://github.com/vamshi9666/react-native-as-modal/issues"
   },
-  "homepage": "https://github.com/vamshi9666/react-native-rn-as-modal#readme",
+  "homepage": "https://github.com/vamshi9666/react-native-as-modal#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.14.5",

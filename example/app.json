@@ -1,10 +1,10 @@
 {
-  "name": "react-native-rn-as-modal-example",
+  "name": "react-native-as-modal-example",
   "displayName": "RnAsModal Example",
   "expo": {
-    "name": "react-native-rn-as-modal-example",
-    "slug": "react-native-rn-as-modal-example",
-    "description": "Example app for react-native-rn-as-modal",
+    "name": "react-native-as-modal-example",
+    "slug": "react-native-as-modal-example",
+    "description": "Example app for react-native-as-modal",
     "privacy": "public",
     "version": "1.0.0",
     "platforms": [
