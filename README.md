@@ -52,6 +52,13 @@ export default function App() {
 }
 
 ```
+## Road map
+This is going to be prequel for a bigger library (coming soon).Although this is going to be well documented and improved over the time with every release.
+[ ] animation config
+[ ] hook api 
+[ ] animated value tracking
+[ ] events (mount and unmount )
+
 
 ## Contributing
 
