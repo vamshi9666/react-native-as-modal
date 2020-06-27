@@ -1,4 +1,5 @@
 # react-native-as-modal
+[![npm version](https://badge.fury.io/js/react-native-as-modal.svg)](https://badge.fury.io/js/react-native-as-modal)
 
 HOC to convert a react native component into modal
 
